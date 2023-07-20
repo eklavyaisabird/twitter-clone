@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="App">
-        What it do soul brother
+        <h1>What it do soul brother</h1>
       </div>
       <Sidebar />
     </>
