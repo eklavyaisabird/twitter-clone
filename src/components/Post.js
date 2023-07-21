@@ -3,7 +3,7 @@ import Avatar from "react-avatar";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 import "./Post.css";
 
-function Post(displayName, userName, verified, text, image, avatar) {
+function Post({ displayName, userName, verified, text, image, avatar }) {
   return (
     <div className="post">
       <div className="post__avatar">
