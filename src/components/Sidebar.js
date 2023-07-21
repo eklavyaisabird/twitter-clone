@@ -6,7 +6,7 @@ import SidebarOption from './SidebarOption'
 function Sidebar() {
   return (
     <div className='sidebar'>
-        <div>Twitter Icon Here :)</div>
+        <div>          :)</div>
     {/*sidebar option */}
     <SidebarOption active text="Home"/>
     <SidebarOption text="Explore"/>
