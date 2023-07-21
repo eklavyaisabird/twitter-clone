@@ -8,7 +8,7 @@ function Widgets() {
         <input placeholder="Search" type="text" />
       </div>
       <div className="widgets__widgetContainer">
-        <h2>Parameters :)</h2>
+        <h2>Other cool stuff :)</h2>
       </div>
     </div>
   );
