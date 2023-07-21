@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
+import Feed from './Feed';
 import Sidebar from './Sidebar';
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <h1>What it do soul brother</h1>
-      </div>
+      <div className="app">
+      
       <Sidebar />
-    </>
+      <Feed />
+      </div>
   );
 }
 
