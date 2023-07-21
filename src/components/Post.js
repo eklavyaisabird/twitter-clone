@@ -7,30 +7,24 @@ function Post(displayName, userName, verified, text, image, avatar) {
   return (
     <div className="post">
       <div className="post__avatar">
-        <Avatar
-          size={50}
-          round={true}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0csE2mYaNIg7qh444OjfQ1AquRYwwrCFF0bvYFgXvrgQNXbi4X5jTulMiy8-LSGt4WwQ&usqp=CAU"
-        />
+        <Avatar size={50} round={true} src={avatar} />
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              Eklavya Mishra{" "}
+              {displayName}{" "}
               <span className="post__headerSpecial">
-                <BsFillEmojiSmileFill className="post__badge" /> @eklavya
+                {verified && <BsFillEmojiSmileFill className="post__badge" />} @
+                {userName}
               </span>
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>*Insert controversial statement here*</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img
-          src="https://betanews.com/wp-content/uploads/2018/06/gifs-on-cli.gif"
-          alt=""
-        />
+        <img src={image} alt="" />
       </div>
     </div>
   );
