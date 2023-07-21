@@ -4,6 +4,10 @@ import Post from "./Post";
 import TweetBox from "./TweetBox";
 import db from "../firebase";
 
+// from transformers import pipeline
+// classifier = pipeline("zero-shot-classification",
+//                       model="facebook/bart-large-mnli")
+
 function Feed() {
   const [posts, setPosts] = useState([]);
 
@@ -22,6 +26,7 @@ function Feed() {
       {/* tweetbox */}
       <TweetBox />
       {/* Posts */}
+      {/* here, only display post if it meets condition */}
       {posts.map((post) => (
         <Post
           displayName={post.displayName}
