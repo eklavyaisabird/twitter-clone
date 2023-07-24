@@ -2,15 +2,16 @@ import React from 'react'
 import { useState } from "react";
 
 const Create = () => {
-  const [title, setTitle] = useState('');  
-  const [body, setBody] = useState('');
+  const [username, setUsername] = useState('');  
+  const [email, setEmail] = useState('');
   const [interests, setInterests] = useState('');
   
   const handleSubmit = (e) => {
     e.preventDefault(); //prevents refreshing the page on submit
-    const accountDetails = { title, body };
+    const accountDetails = { username, email };
+    const userInterests = { interests }
     console.log(accountDetails);
-
+    console.log(userInterests);
   }
   
   return (
@@ -21,20 +22,20 @@ const Create = () => {
             <input
                 type="text"
                 required
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
             />
             <label>Password:</label>
             <input
-                type="text"
+                type="password"
                 required
             />
             <label>Email:</label>
             <input
                 type="text"
                 required
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
             ></input>
             <label>Enter 3 of your interests:</label>
             <textarea
@@ -43,9 +44,6 @@ const Create = () => {
                 onChange={(e) => setInterests(e.target.value)}
             ></textarea>
             <button>Submit</button>
-            <p>{ title }</p>
-            <p>{ body }</p>
-            <p>{ interests }</p>
         </form>
     </div>
   )

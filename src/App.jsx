@@ -9,11 +9,11 @@ import { useEffect, useState} from 'react';
 
 function App() {
   const [timedPopup, setTimedPopup] = useState(false);
-  
+
   useEffect(() => {
     setTimeout(()=>{
       setTimedPopup(true);
-    }, 500);
+    }, 0);
   }, []);
 
   return (
@@ -23,6 +23,7 @@ function App() {
       <Widgets />
       <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
           <Create />
+          
       </Popup>
     </div>
   );
