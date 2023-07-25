@@ -1,7 +1,19 @@
-import React from "react";
+import { AlbertForSequenceClassification } from "@xenova/transformers";
+import React, { useState } from "react";
+import { BsArrow90DegDown } from "react-icons/bs";
+import InterestButton from "./InterestButton";
 import "./Widgets.css";
 
 function Widgets({list}) {
+  // console.log("IS LIST NORMAL?", list)
+
+  const [interest, setInterest] = useState("")
+
+  const handleClick = (item) => {
+    console.log("INTEREST SELECTED!!!", item);
+    setInterest(item)
+  }
+
   return (
     <div className="widgets">
       <div className="widgets__input">
@@ -14,11 +26,24 @@ function Widgets({list}) {
         {/* Here be interests */}
 
       <ul className="list-group">
+      <li>
         {list.map((item) => (
-          <li>
-            {item}
-          </li>
+          <>
+            <InterestButton 
+            onChoose={() => handleClick(item)} text={item} />
+            {/* <button 
+            onClick={() => {
+              console.log("INTEREST SELECTED!!! hee hee")
+            }} text={item} >{item}</button> */}
+            {/* <InterestButton 
+            onChoose={() => {
+              console.log("ITS ALIVE!!! ITS ALIIIIIVE!!!!!");
+              console.log("INTEREST SELECTED!!!", item);
+    setInterest(item)
+              }} text={item} /> */}
+          </>
         ))}
+        </li>
       </ul>
       </div>
     </div>

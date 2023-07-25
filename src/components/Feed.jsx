@@ -42,6 +42,7 @@ function Feed({ username, url, interests }) {
       {/* Posts */}
       {/* here, only display post if it meets condition */}
       {posts.map((post) => (
+        // condition && ...
         <Post
           displayName={post.displayName}
           userName={post.userName}

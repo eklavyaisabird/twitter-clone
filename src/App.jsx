@@ -32,7 +32,7 @@ function App() {
           setUrl(url);
           setInterests(interests.match(/\b(\w+)\b/g));
           setList(interests.match(/\b(\w+)\b/g));
-          console.log("OKAYYYY", { username, url, interests, list })
+          console.log("OKURRRRY", { username, url, interests, list })
           console.log("LIST MAYBE??:", interests.match(/\b(\w+)\b/g))
         }} />
       </Popup>

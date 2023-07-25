@@ -1,7 +1,7 @@
 import { pipeline } from "@xenova/transformers";
 
 let s = "one day i will see the world";
-let labels = ["travel"];
+let labels = ["travel", "sports", "sex"];
 
 // Allocate a pipeline for sentiment-analysis
 try {
