@@ -3,20 +3,19 @@ import "./TweetBox.css";
 import Avatar from "react-avatar";
 import db from "../firebase";
 
-function TweetBox() {
+function TweetBox({username, url, interests}) {
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
 
   const sendTweet = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      displayName: "eklavya",
-      userName: "eklavyaisabird",
+      displayName: username,
+      userName: username,
       verified: true,
       text: tweetMessage,
       image: tweetImage,
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0csE2mYaNIg7qh444OjfQ1AquRYwwrCFF0bvYFgXvrgQNXbi4X5jTulMiy8-LSGt4WwQ&usqp=CAU",
+      avatar: url,
     });
   };
 
@@ -27,7 +26,7 @@ function TweetBox() {
           <Avatar
             size={80}
             round={true}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0csE2mYaNIg7qh444OjfQ1AquRYwwrCFF0bvYFgXvrgQNXbi4X5jTulMiy8-LSGt4WwQ&usqp=CAU"
+            src={url}
           />
           <input
             placeholder="What's happening?"

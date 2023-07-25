@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from "react";
 
-const Create = () => {
+const Create = ({onSubmit}) => {
   const [username, setUsername] = useState('');  
   const [email, setEmail] = useState('');
+  const [url, setUrl] = useState('');
   const [interests, setInterests] = useState('');
   
   const handleSubmit = (e) => {
@@ -12,6 +13,8 @@ const Create = () => {
     const userInterests = { interests }
     console.log(accountDetails);
     console.log(userInterests);
+    onSubmit({ username, url, interests }); // Pass the data to the callback prop
+
   }
   
   return (
@@ -36,6 +39,13 @@ const Create = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+            ></input>
+            <label>Avatar (url):</label>
+            <input
+                type="text"
+                required
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
             ></input>
             <label>Enter 3 of your interests:</label>
             <textarea

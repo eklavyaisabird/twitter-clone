@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Feed from "./components/Feed";
 import Sidebar from "./components/Sidebar";
@@ -9,6 +9,9 @@ import { useEffect, useState} from 'react';
 
 function App() {
   const [timedPopup, setTimedPopup] = useState(false);
+  const [username, setUsername] = useState('');  
+  const [url, setUrl] = useState('');
+  const [interests, setInterests] = useState('');
 
   useEffect(() => {
     setTimeout(()=>{
@@ -20,11 +23,15 @@ function App() {
   return (
     <div className="app">
       <Sidebar />
-      <Feed />
+      <Feed username={username} url={url} interests={interests} />
       <Widgets />
       <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
-          <Create />
-          
+      <Create onSubmit={({ username, url, interests }) => {
+          setUsername(username);
+          setUrl(url);
+          setInterests(interests);
+          console.log("OKAYYYY", { username, url, interests })
+        }} />
       </Popup>
     </div>
   );
