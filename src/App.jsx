@@ -11,26 +11,29 @@ function App() {
   const [timedPopup, setTimedPopup] = useState(false);
   const [username, setUsername] = useState('');  
   const [url, setUrl] = useState('');
-  const [interests, setInterests] = useState('');
+  const [interests, setInterests] = useState([]);
+  const [list, setList] = useState([]);
+
 
   useEffect(() => {
     setTimeout(()=>{
       setTimedPopup(true);
     }, 0);
   }, []);
-  const [preferences, setPreferences] = useState(["sports"]);
 
   return (
     <div className="app">
       <Sidebar />
       <Feed username={username} url={url} interests={interests} />
-      <Widgets />
+      <Widgets list={list}/>
       <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
       <Create onSubmit={({ username, url, interests }) => {
           setUsername(username);
           setUrl(url);
-          setInterests(interests);
-          console.log("OKAYYYY", { username, url, interests })
+          setInterests(interests.match(/\b(\w+)\b/g));
+          setList(interests.match(/\b(\w+)\b/g));
+          console.log("OKAYYYY", { username, url, interests, list })
+          console.log("LIST MAYBE??:", interests.match(/\b(\w+)\b/g))
         }} />
       </Popup>
     </div>

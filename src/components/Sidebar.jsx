@@ -5,13 +5,13 @@ import SidebarOption from "./SidebarOption";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <div> :)</div>
+      <div>X</div>
       {/*sidebar option */}
       <SidebarOption active text="Home" />
       <SidebarOption text="Explore" />
       <SidebarOption text="Profile" />
       <SidebarOption text="More" />
-      <button className="sidebar__tweet">Tweet</button>
+      {/* <button className="sidebar__tweet">Tweet</button> */}
     </div>
   );
 }
