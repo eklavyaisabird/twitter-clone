@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Feed from "./components/Feed";
 import Sidebar from "./components/Sidebar";
@@ -15,6 +15,7 @@ function App() {
       setTimedPopup(true);
     }, 0);
   }, []);
+  const [preferences, setPreferences] = useState(["sports"]);
 
   return (
     <div className="app">

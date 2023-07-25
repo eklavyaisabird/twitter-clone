@@ -1,14 +1,15 @@
 import { pipeline } from "@xenova/transformers";
 
 let s = "one day i will see the world";
-let labels = ["travel", "cooking", "dancing"];
+let labels = ["travel"];
 
 // Allocate a pipeline for sentiment-analysis
 try {
   console.log("await pipeline...");
   let pipe = await pipeline(
     "zero-shot-classification",
-    "Xenova/bart-large-mnli"
+    "Xenova/bart-large-mnli",
+    { quantized: false }
   );
 
   console.log("await out...");
