@@ -18,7 +18,7 @@ import { pipeline } from "@xenova/transformers";
 
 // try using this instead: https://huggingface.co/docs/huggingface.js/main/en/inference/README
 
-function Feed({ username, url, interests }) {
+function Feed({ username, url, interests, selectedInterest }) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -39,6 +39,7 @@ function Feed({ username, url, interests }) {
         url={url}
         interests={interests}
       />
+      <p>Selected Interest: {selectedInterest}</p>
       {/* Posts */}
       {/* here, only display post if it meets condition */}
       {posts.map((post) => (
