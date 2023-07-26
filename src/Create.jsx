@@ -6,9 +6,13 @@ const Create = ({onSubmit}) => {
   const [email, setEmail] = useState('');
   const [url, setUrl] = useState('');
   const [interests, setInterests] = useState('');
+
+  const [created, setCreated] = useState(false);
+
   
   const handleSubmit = (e) => {
     e.preventDefault(); //prevents refreshing the page on submit
+    setCreated(true);
     const accountDetails = { username, email };
     const userInterests = { interests }
     console.log(accountDetails);

@@ -2,7 +2,12 @@ import { pipeline } from "@xenova/transformers";
 
 export default async function checkTweet(text, interest) {
   try {
-    // console.log("await pipeline...");
+    console.log(
+      `checking tweet...\ntext:${text.substring(
+        0,
+        10
+      )}...\ninterest:${interest}`
+    );
     let pipe = await pipeline(
       "zero-shot-classification",
       "Xenova/bart-large-mnli",
@@ -20,8 +25,7 @@ export default async function checkTweet(text, interest) {
   }
 }
 
-checkTweet("i want to eat some gabagool right now and then shoot some hoops", [
-  "food",
-  "travel",
-  "sports",
-]).then((res) => console.log(res));
+// checkTweet(
+//   "i want to eat some gabagool right now and then shoot some hoops",
+//   "sports"
+// ).then((res) => console.log("res = ", res));

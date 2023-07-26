@@ -14,6 +14,9 @@ function App() {
   const [interests, setInterests] = useState([]);
   const [list, setList] = useState([]);
 
+  const [created, setCreated] = useState(false);
+
+
   // Using the custom hook to manage the interest state
   const { interest, setInterest } = useInterestState();
 
@@ -42,6 +45,7 @@ function App() {
         url={url}
         interests={interests}
         selectedInterest={interest}
+        created={created}
       />
       <Widgets
         list={list}
@@ -58,11 +62,12 @@ function App() {
       />
       <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
         <Create
-          onSubmit={({ username, url, interests }) => {
+          onSubmit={({ username, url, interests, created }) => {
             setUsername(username);
             setUrl(url);
             setInterests(interests.match(/\b(\w+)\b/g));
             setList(interests.match(/\b(\w+)\b/g));
+            setCreated(true)
             console.log("OKURRRRY", { username, url, interests, list });
             console.log("LIST MAYBE??:", interests.match(/\b(\w+)\b/g));
           }}
